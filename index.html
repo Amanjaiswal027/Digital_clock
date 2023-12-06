@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital click using javascript</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+       let hrs = document.getElementById("hrs");
+       let min = document.getElementById("min");
+       let sec = document.getElementById("sec");
+    
+setInterval(() => {
+    let currenttime = new Date();
+    hrs.innerHTML = (currenttime.getHours() < 10 ? "0" : "") + currenttime.getHours();
+    min.innerHTML = (currenttime.getMinutes() < 10 ? "0" : "") + currenttime.getMinutes();
+    sec.innerHTML = (currenttime.getSeconds() < 10 ? "0" : "") + currenttime.getSeconds();
+}, 1000);
+
+let currenttime = new Date();
+console.log(currenttime.getMinutes());
+
+
+          
+    </script>
+</body>
+</html>
